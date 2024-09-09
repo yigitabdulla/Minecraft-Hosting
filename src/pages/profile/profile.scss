@@ -1,0 +1,135 @@
+.profile {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+
+    h3 {
+        font-size: 32px;
+    }
+
+    .account-settings {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 80vw;
+
+        .username {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: rgba(255, 255, 255, 0.74) 0px 1px 4px;
+            padding: 20px;
+            width: 400px;
+            color: rgba(255, 255, 255, 0.74);
+            border-radius: 5px;
+            height: 170px;
+
+            input {
+                padding: 8px;
+                background-color: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.74);
+                color: rgba(255, 255, 255, 0.74);
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid rgba(255, 255, 255, 0.74);
+                color: rgba(255, 255, 255, 0.74);
+                background-color: transparent;
+                padding: 8px;
+                cursor: pointer;
+                transition: 0.3s ease;
+
+                &:hover {
+                    color: #a4c4ff;
+                    border: 1px solid #a4c4ff;
+                }
+
+            }
+        }
+
+        .language {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: rgba(255, 255, 255, 0.74) 0px 1px 4px;
+            padding: 20px;
+            width: 400px;
+            color: rgba(255, 255, 255, 0.74);
+            border-radius: 5px;
+            height: 170px;
+
+            select {
+                background-color: transparent;
+                color: rgba(255, 255, 255, 0.74);
+                padding: 8px;
+                border: 1px solid rgba(255, 255, 255, 0.74);
+            }
+
+            a {
+                align-self: center;
+                transition: 0.3s ease;
+                margin-top: 20px;
+
+                &:hover {
+                    color: #a4c4ff;
+                }
+            }
+
+        }
+
+        .delete-account {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: rgba(255, 255, 255, 0.74) 0px 1px 4px;
+            padding: 20px;
+            width: 400px;
+            color: rgba(255, 255, 255, 0.74);
+            border-radius: 5px;
+            height: 170px;
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid rgba(255, 255, 255, 0.74);
+                color: rgba(255, 255, 255, 0.74);
+                background-color: transparent;
+                padding: 8px;
+                cursor: pointer;
+                transition: 0.3s ease;
+                width: 220px;
+
+                &:hover {
+                    color: #ffa4a4;
+                    border: 1px solid #ffa4a4;
+                }
+
+            }
+        }
+
+        .email-natifications {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: rgba(255, 255, 255, 0.74) 0px 1px 4px;
+            padding: 20px;
+            width: 400px;
+            color: rgba(255, 255, 255, 0.74);
+            border-radius: 5px;
+            height: 170px;
+        }
+    }
+}

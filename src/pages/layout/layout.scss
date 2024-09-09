@@ -1,0 +1,79 @@
+@import "../../responsive.scss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  font-family: "Poppins", sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden
+}
+
+body {
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.586),
+    rgb(44, 47, 72)
+  ), 
+  url('../../../public/wallpaper-free.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #27221c;
+  overflow-y: scroll;
+}
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+  .content {
+    flex: 1;
+  }
+
+  @include lg {
+    max-width: 1280px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(247, 210, 196);
+  }
+
+  @include md {
+    max-width: 768px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(186, 203, 234);
+  }
+
+  @include sm {
+    max-width: 640px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(239, 200, 200);
+  }
+}
+
+/* Full screen background for Component1 */
+.background-component1 {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.7)
+  ), 
+  url('../../../public/nether1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #333;
+}
