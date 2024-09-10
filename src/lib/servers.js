@@ -7,7 +7,8 @@ export const servers = [
         image: 'https://i.pinimg.com/564x/18/5a/91/185a9137210c9e463ae8c4076b731c83.jpg',
         info: "Suitable for small scale servers!",
         users: 126,
-        ram: 2
+        ram: 2,
+        isActive: false
     },
 
     {
@@ -18,7 +19,8 @@ export const servers = [
         image: 'https://i.pinimg.com/564x/f6/a2/eb/f6a2eb47b98a60dc984dcfa1e0333fa3.jpg',
         info: "An option where you can have fun with more friends!",
         users: 273,
-        ram: 3
+        ram: 3,
+        isActive: true
     },
 
     {
@@ -29,7 +31,8 @@ export const servers = [
         image: 'https://i.pinimg.com/564x/56/83/41/56834170848d39785038c24bdf0105f8.jpg',
         info: "Suitable for a SMP server with your friends!",
         users: 88,
-        ram: 4
+        ram: 4,
+        isActive: true
     },
 
     {
@@ -41,6 +44,7 @@ export const servers = [
         info: "You can build an entire village here!",
         users: 63,
         ram: 5,
+        isActive: false
     },
 
     {
@@ -52,6 +56,7 @@ export const servers = [
         info: "How about conquering the Minecraft world with your army?",
         users: 27,
         ram: 6,
+        isActive: false
     },
 
     {
@@ -63,6 +68,7 @@ export const servers = [
         info: "Most fearless one. Are you ready for it?",
         users: 12,
         ram: 8,
+        isActive: false
     },
 
 ]

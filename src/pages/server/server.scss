@@ -1,0 +1,184 @@
+.server {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    gap: 20px;
+
+    .server-bar {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        width: 600px;
+        background-color: rgba(128, 128, 128, 0.156);
+        border-radius: 5px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 10px;
+
+        p {
+            font-size: 32px;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            border-radius: 5px;
+            padding: 8px;
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            cursor: pointer;
+            transition: 0.3s ease;
+
+            &:hover {
+                color: aquamarine;
+                border-color: aquamarine;
+            }
+
+        }
+
+        .not-active {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            background-color: #ff5340;
+            border-radius: 5px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .active {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            background-color: rgba(21, 255, 193, 0.603);
+            border-radius: 5px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    }
+
+    .server-info {
+        display: flex;
+        gap: 20px;
+        width: 600px;
+
+        .how-to-connect {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            width: 300px;
+            gap: 10px;
+            background-color: rgba(128, 128, 128, 0.156);
+            border-radius: 5px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 5px;
+
+            p {
+                padding: 10px;
+
+                &:first-child {
+                    font-size: 18px;
+                    background-color: rgba(0, 123, 255, 0.326);
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    gap: 5px;
+                }
+
+                &:last-child {}
+            }
+        }
+
+        .server-infos {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: space-around;
+            gap: 10px;
+            height: 250px;
+            background-color: rgba(128, 128, 128, 0.156);
+            border-radius: 5px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            width: 300px;
+            border: 5px;
+            padding: 10px;
+
+            .server-single-info {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                width: 100%; 
+                border: 5px;
+                
+                p {
+                    &:first-child{
+                        display: flex;
+                        align-items: center;
+                        justify-content: start;
+                    }
+
+                    &:last-child {
+                        color: aqua;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .start-button {
+        padding: 10px;
+        width: 600px;
+        font-size: 16px;
+        margin-top: 10px;
+        align-self: center;
+        background-color: transparent;
+        color: white;
+        background-image: linear-gradient(144deg, #40ffb3, #5B42F3 50%, #00DDEB);
+        background-size: 200%; /* Increase background size to create the effect */
+        background-position: 0%; /* Start at the first position */
+        cursor: pointer;
+        border-radius: 10px;
+        transition: background-position 0.3s ease; /* Apply the transition to background-position */
+
+        &:hover {
+            background-position: 100%;
+        }
+    }
+
+    .stop-button {
+        padding: 10px;
+        width: 600px;
+        font-size: 16px;
+        margin-top: 10px;
+        align-self: center;
+        background-color: transparent;
+        color: white;
+        background-image: linear-gradient(144deg, #ff5340, #ff62b8 50%, #eb6e00);
+        background-size: 200%; /* Increase background size to create the effect */
+        background-position: 0%; /* Start at the first position */
+        cursor: pointer;
+        border-radius: 10px;
+        transition: background-position 0.3s ease; /* Apply the transition to background-position */
+
+        &:hover {
+            background-position: 100%;
+        }
+    }
+}

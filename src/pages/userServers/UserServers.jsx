@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
 import './userServers.scss'
 import { servers } from '../../lib/servers.js'
+import { useNavigate } from 'react-router-dom';
 
 export default function UserServers() {
 
-    const [active,setActive] = useState(false)
+    const navigate = useNavigate();
 
+    const handleServerClick = (server) => {
+        console.log("row clicked")
+        navigate(`/profile/servers/${server.id}`, { state: { server } });
+        console.log(server)
+    }
 
     return (
         <div className='user-servers'>
@@ -17,7 +23,12 @@ export default function UserServers() {
                         <div className="server-title">
                             <img src={server.image} alt="" />
                             <p>User Server Name</p>
-                            <a className='server-settings' href={'/profile/servers/'+server.id}>Server Settings</a>
+                            <a
+                                className='server-settings'
+                                onClick={() => handleServerClick(server)}
+                            >
+                                Server Settings
+                            </a>
                         </div>
 
                         <div className="server-info">
@@ -30,7 +41,7 @@ export default function UserServers() {
 
                         </div>
 
-                        {active ? <button onClick={() => setActive(!active)} className='start-button'>Start Server</button> : <button onClick={() => setActive(!active)} className='stop-button'>Stop Server</button>}
+                        {!server.isActive ? <button className='start-button'>Start Server</button> : <button className='stop-button'>Stop Server</button>}
 
                     </div>
                 ))}
