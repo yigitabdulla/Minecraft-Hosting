@@ -10,7 +10,7 @@ export default function Navbar() {
 
   const handleAuth = () => {
     setAuth(!auth)
-    handleClose()
+    setAnchorEl(null);
   }
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -33,6 +33,7 @@ export default function Navbar() {
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/servers">Servers</a></li>
+          <li><a href="/cart">Cart <p>2</p></a></li>
           <li><a href="/contact">Contact Us</a></li>
           {auth ? <li><a
             onClick={handleClick}

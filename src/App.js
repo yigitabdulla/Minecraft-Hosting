@@ -11,6 +11,7 @@ import Contact from './pages/contact/Contact';
 import Profile from './pages/profile/Profile';
 import UserServers from './pages/userServers/UserServers';
 import Server from './pages/server/Server';
+import Cart from './pages/cart/Cart';
 
 
 function App() {
@@ -43,6 +44,10 @@ function App() {
         {
           path: "/profile/servers/:id",
           element: <Server/>
+        },
+        {
+          path: "/cart",
+          element: <Cart/>
         },
 
 
