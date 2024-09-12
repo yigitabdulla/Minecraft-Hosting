@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './server.scss'
 import { useLocation } from 'react-router-dom';
 import CableIcon from '@mui/icons-material/Cable';
@@ -13,7 +13,7 @@ export default function Server() {
     const { server } = location.state || {};
 
     if (!server) {
-        return <div>No employee data available</div>;
+        window.location.href = '/servers';
     }
 
     return (

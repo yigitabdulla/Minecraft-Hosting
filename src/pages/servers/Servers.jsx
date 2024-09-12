@@ -1,9 +1,27 @@
 import React from 'react'
 import './servers.scss'
 import { servers } from '../../lib/servers.js'
+import { addToCart } from '../../redux/slices/cartSlice.jsx'
+import { useSelector , useDispatch } from 'react-redux'
 
 export default function Servers() {
 
+    const dispatch = useDispatch()
+
+    const cart = useSelector(store => store.cart.items)
+    console.log(cart)
+
+    const findDetail = (product) => {
+        const server = servers.filter(server => product.id === server.id)
+    }
+
+    const handleAddToCart = (product) => {
+        dispatch(addToCart({
+            productId: product.id,
+            quantity: 1
+        }))
+        findDetail(product)
+    }
 
 
     return (
@@ -36,7 +54,7 @@ export default function Servers() {
 
                         </div>
 
-                        <button className='server-button'>Add to cart</button>
+                        <button className='server-button' onClick={() => handleAddToCart(server)}>Add to cart</button>
 
                         <div className="discount">10% discount with LUMINO10 code!</div>
                     </div>

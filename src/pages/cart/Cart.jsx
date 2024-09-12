@@ -1,8 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './cart.scss'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import { useSelector } from 'react-redux';
+import { servers } from '../../lib/servers.js'
 
 export default function Cart() {
+
+    const [quantity, setQuantity] = useState(1)
+    const [cartItems , setCartItems] = useState([])
+    
+    const cart = useSelector(store => store.cart.items)
+    console.log(cart)
+
+    const findDetail = (productId) => {
+        const server = servers.find(server => productId === server.id); // find returns the first match
+    };
+    
+    cart.forEach(item => findDetail(item.productId));
+
+    const handleMinusQuantity = () => {
+        setQuantity(quantity-1 < 1 ? 1 : quantity-1)
+    }
+
+    const handlePlusQuantity = () => {
+        setQuantity(quantity+1)
+    }
+    
+
     return (
         <div className='cart'>
 
@@ -10,7 +34,7 @@ export default function Cart() {
                 <h3>Cart</h3>
 
                 <div className="cart-item">
-                    <img src='https://i.pinimg.com/564x/56/83/41/56834170848d39785038c24bdf0105f8.jpg' />
+                    <img src='/snowman-head.png' />
                     <div className='title'>Snowman Server</div>
                     <div>4 GB Ram</div>
                     <div>Up to 20 People</div>
@@ -19,7 +43,7 @@ export default function Cart() {
                 </div>
 
                 <div className="cart-item">
-                    <img src='https://i.pinimg.com/564x/56/83/41/56834170848d39785038c24bdf0105f8.jpg' />
+                    <img src='/snowman-head.png' />
                     <div className='title'>Snowman Server</div>
                     <div>4 GB Ram</div>
                     <div>Up to 20 People</div>

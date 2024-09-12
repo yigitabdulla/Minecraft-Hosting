@@ -16,7 +16,7 @@ export default function Home() {
           </div>
           <a href='/servers' className='welcome-button'>Select Server</a>
         </div>
-        <img src="/multiplayer.png" alt="" />
+        <img src="/multiplayer-img.png" alt="" />
       </div>
 
       <div className="features">
@@ -30,7 +30,7 @@ export default function Home() {
         <div className="best-seller-left">
 
           <div className="best-seller-title">
-            <img src="/cat.jpg" alt="" />
+            <img src="/cat-head.png" alt="" />
             <p>Cat Server</p>
             <p className='most-preferred'>Most Preferred</p>
           </div>
@@ -131,7 +131,7 @@ export default function Home() {
 
       <div className="special-request">
         <p>If you have a special server request, you can <a href="/contact">contact us</a>.</p>
-        <img src="/wandering.png" alt="" />
+        <img src="/wandering-trader.png" alt="" />
       </div>
 
     </div>

@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './navbar.scss'
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { useSelector } from 'react-redux';
 
 export default function Navbar() {
+
+  const [totalQuantity, setTotalQuantity] = useState(0)
 
   const [auth, setAuth] = useState(true)
 
@@ -22,6 +25,16 @@ export default function Navbar() {
     setAnchorEl(null);
   };
 
+  const cart = useSelector(store => store.cart.items);
+
+  useEffect(() => {
+    let total = 0;
+    cart.forEach(item => {
+      total += item.quantity
+    });
+    setTotalQuantity(total)
+  }, [cart])
+
   return (
     <nav>
       <div className="left">
@@ -33,7 +46,7 @@ export default function Navbar() {
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/servers">Servers</a></li>
-          <li><a href="/cart">Cart <p>2</p></a></li>
+          <li><a href="/cart">Cart <p>{totalQuantity}</p></a></li>
           <li><a href="/contact">Contact Us</a></li>
           {auth ? <li><a
             onClick={handleClick}
