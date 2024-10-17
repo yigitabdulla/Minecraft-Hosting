@@ -12,6 +12,8 @@ import Profile from './pages/profile/Profile';
 import UserServers from './pages/userServers/UserServers';
 import Server from './pages/server/Server';
 import Cart from './pages/cart/Cart';
+import Login from './pages/login/Login';
+import Signup from './pages/signup/Signup';
 
 
 function App() {
@@ -24,6 +26,14 @@ function App() {
         {
           path: "/",
           element: <Home/>
+        },
+        {
+          path: "/login",
+          element: <Login/>
+        },
+        {
+          path: "/signup",
+          element: <Signup/>
         },
         {
           path: "/servers",

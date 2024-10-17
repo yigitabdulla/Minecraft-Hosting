@@ -1,0 +1,85 @@
+.signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+
+    .signup-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #ffffff3f;
+        padding: 20px;
+        border-radius: 5px;
+        width: 350px;
+
+        input {
+            background-color: #5ec2e0; /* Light blue similar to water/diamond */
+            color: black;
+            font-size: 15px;
+            padding: 5px;
+            border: 5px solid #4597a5; /* Darker blue border */
+            box-shadow: 0 4px #4597a5;
+            font-weight: bold;
+            outline: none;
+            transition: all 0.2s ease;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+          }
+      
+          input:focus {
+            background-color: #70d1f4; /* Slightly lighter when focused */
+            box-shadow: 0 2px #4597a5;
+          }
+      
+          input:active {
+            box-shadow: none;
+            transform: translateY(2px);
+          }
+      
+          button {
+            background-color: #70adad; /* Light blue */
+            color: white;
+            font-size: 20px;
+            padding: 15px 30px;
+            border: 5px solid #419292; /* Darker blue border */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 8px #4597a5;
+            transition: all 0.1s ease-in-out;
+            position: relative;
+            display: inline-block;
+          }
+      
+          button:active {
+            box-shadow: none;
+            transform: translateY(8px);
+          }
+      
+          button:hover {
+            background-color: #7ecccc; /* Lighter blue on hover */
+          }
+
+        .to-login {
+            display: flex;
+            gap: 5px;
+            
+            p {
+                color: whitesmoke;
+            }
+
+            a {
+                color: aquamarine;
+                transition: 0.1s ease;
+
+                &:hover {
+                    transform: scale(1.04);
+                }
+            }
+        }
+    }
+}
