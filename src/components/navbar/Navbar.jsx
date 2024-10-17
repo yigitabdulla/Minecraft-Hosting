@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './navbar.scss'
-import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { useSelector } from 'react-redux';

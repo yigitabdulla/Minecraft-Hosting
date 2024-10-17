@@ -1,31 +1,40 @@
 import React, { useState } from 'react'
 import './cart.scss'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import { useSelector } from 'react-redux';
-import { servers } from '../../lib/servers.js'
+import { useSelector , useDispatch } from 'react-redux'
+import {changeQuantity} from '../../redux/slices/cartSlice'
 
 export default function Cart() {
 
-    const [quantity, setQuantity] = useState(1)
-    const [cartItems , setCartItems] = useState([])
+    const dispatch = useDispatch()
     
     const cart = useSelector(store => store.cart.items)
     console.log(cart)
 
-    const findDetail = (productId) => {
-        const server = servers.find(server => productId === server.id); // find returns the first match
-    };
-    
-    cart.forEach(item => findDetail(item.productId));
-
-    const handleMinusQuantity = () => {
-        setQuantity(quantity-1 < 1 ? 1 : quantity-1)
+    const handleMinusQuantity = (id,quantity) => {
+        dispatch(changeQuantity({
+            id: id,
+            quantity: quantity-1
+        }))
     }
 
-    const handlePlusQuantity = () => {
-        setQuantity(quantity+1)
+    const handlePlusQuantity = (id,quantity) => {
+        dispatch(changeQuantity({
+            id: id,
+            quantity: quantity+1
+        }))
     }
-    
+
+    const handleDelete = (id) => {
+        dispatch(changeQuantity({
+            id:id,
+            quantity: 0
+        }))
+    }
+
+    const calculateTotalPrice = (items) => {
+        return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+      };
 
     return (
         <div className='cart'>
@@ -33,23 +42,15 @@ export default function Cart() {
             <div className="order">
                 <h3>Cart</h3>
 
-                <div className="cart-item">
-                    <img src='/snowman-head.png' />
-                    <div className='title'>Snowman Server</div>
-                    <div>4 GB Ram</div>
-                    <div>Up to 20 People</div>
-                    <div>20$/mo</div>
-                    <button className='cart-delete-button'><DeleteOutlineIcon /></button>
-                </div>
-
-                <div className="cart-item">
-                    <img src='/snowman-head.png' />
-                    <div className='title'>Snowman Server</div>
-                    <div>4 GB Ram</div>
-                    <div>Up to 20 People</div>
-                    <div>20$/mo</div>
-                    <button className='cart-delete-button'><DeleteOutlineIcon /></button>
-                </div>
+                {cart.map(cartItem => <div key={cartItem.id} className="cart-item">
+                    <img src={cartItem.image} />
+                    <div className='title'>{cartItem.name}</div>
+                    <div>{cartItem.ram} GB Ram</div>
+                    <div>Up to {cartItem.users} People</div>
+                    <div>{cartItem.price}$/mo</div>
+                    <div className='quantity-buttons'><button onClick={() => handleMinusQuantity(cartItem.id, cartItem.quantity)}>-</button>{cartItem.quantity}<button onClick={() => handlePlusQuantity(cartItem.id, cartItem.quantity)}>+</button></div>
+                    <button className='cart-delete-button' onClick={() => handleDelete(cartItem.id)}><DeleteOutlineIcon /></button>
+                </div>)}
 
                 <div className="billing-address">
                     <h5>Select billing address</h5>
@@ -97,7 +98,7 @@ export default function Cart() {
                     </div>
                 </div>
 
-                <div className='total'>Total is <p>40$/mo</p></div>
+                <div className='total'>Total is <p>{calculateTotalPrice()}$/mo</p></div>
 
                 <button className='finish-order'>Finish Order</button>
             </div>

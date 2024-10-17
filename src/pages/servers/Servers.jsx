@@ -2,7 +2,7 @@ import React from 'react'
 import './servers.scss'
 import { servers } from '../../lib/servers.js'
 import { addToCart } from '../../redux/slices/cartSlice.jsx'
-import { useSelector , useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 export default function Servers() {
 
@@ -17,8 +17,16 @@ export default function Servers() {
 
     const handleAddToCart = (product) => {
         dispatch(addToCart({
-            productId: product.id,
-            quantity: 1
+            id: product.id,
+            quantity: 1,
+            name: product.name,
+            price: product.price,
+            maxUser: product.maxUser,
+            image: product.image,
+            info: product.info,
+            users: product.users,
+            ram: product.ram,
+
         }))
         findDetail(product)
     }
