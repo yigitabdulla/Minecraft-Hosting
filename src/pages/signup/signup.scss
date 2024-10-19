@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 100%;
+    margin: 20px 0;
 
     .signup-form {
         display: flex;
@@ -81,5 +82,11 @@
                 }
             }
         }
+
+      .error-messages {
+        display: flex;
+        flex-direction: column;
+        color: rgb(255, 98, 98);
+      }
     }
 }

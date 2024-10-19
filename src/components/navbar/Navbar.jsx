@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const [totalQuantity, setTotalQuantity] = useState(0)
 
-  const [auth, setAuth] = useState(true)
+  const [auth, setAuth] = useState(false)
 
   const handleAuth = () => {
     setAuth(!auth)
@@ -64,8 +64,8 @@ export default function Navbar() {
             >
               <MenuItem onClick={handleClose}><a href="/profile">Profile</a></MenuItem>
               <MenuItem onClick={handleClose}><a href="/profile/servers">My Servers</a></MenuItem>
-              <MenuItem onClick={() => handleAuth()}>Logout</MenuItem>
-            </Menu></li> : <li><a href="/login" onClick={() => handleAuth()}>Login</a></li>}
+              <MenuItem>Logout</MenuItem>
+            </Menu></li> : <li><a href="/login">Login</a></li>}
         </ul>
       </div>
     </nav>
