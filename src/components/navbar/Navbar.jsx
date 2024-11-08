@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const [totalQuantity, setTotalQuantity] = useState(0)
 
-  const [auth, setAuth] = useState(false)
+  const [auth, setAuth] = useState(true)
 
   const handleAuth = () => {
     setAuth(!auth)

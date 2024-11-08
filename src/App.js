@@ -14,6 +14,7 @@ import Server from './pages/server/Server';
 import Cart from './pages/cart/Cart';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
+import ServerSettings from './pages/serverSettings/ServerSettings';
 
 
 function App() {
@@ -52,7 +53,11 @@ function App() {
           element: <UserServers/>
         },
         {
-          path: "/profile/servers/:id",
+          path: "/profile/servers/:serverId/settings",
+          element: <ServerSettings/>
+        },
+        {
+          path: "/profile/servers/:serverId",
           element: <Server/>
         },
         {

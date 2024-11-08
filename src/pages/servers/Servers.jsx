@@ -9,26 +9,13 @@ export default function Servers() {
     const dispatch = useDispatch()
 
     const cart = useSelector(store => store.cart.items)
-    console.log(cart)
-
-    const findDetail = (product) => {
-        const server = servers.filter(server => product.id === server.id)
-    }
 
     const handleAddToCart = (product) => {
         dispatch(addToCart({
             id: product.id,
             quantity: 1,
-            name: product.name,
-            price: product.price,
-            maxUser: product.maxUser,
-            image: product.image,
-            info: product.info,
-            users: product.users,
-            ram: product.ram,
-
         }))
-        findDetail(product)
+        //findDetail(product)
     }
 
 
