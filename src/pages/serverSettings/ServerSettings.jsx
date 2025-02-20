@@ -79,7 +79,7 @@ export default function ServerSettings() {
                             <div className="setting-item">
                                 <label>Enable PvP</label>
                                 <button className="toggle-button">
-                                    {userServer.pvpEnabled ? <ToggleOnIcon /> : <ToggleOffIcon />}
+                                    {userServer.pvpEnabled ? <ToggleOnIcon fontSize='large' /> : <ToggleOffIcon fontSize='large' />}
                                 </button>
                             </div>
                         </div>
@@ -122,7 +122,7 @@ export default function ServerSettings() {
                             <div className="setting-item">
                                 <label>Whitelist</label>
                                 <button className="toggle-button">
-                                    {userServer.whitelistEnabled ? <ToggleOnIcon /> : <ToggleOffIcon />}
+                                    {userServer.whitelistEnabled ? <ToggleOnIcon fontSize='large' /> : <ToggleOffIcon fontSize='large' />}
                                 </button>
                             </div>
                             <div className="setting-item">
@@ -142,7 +142,7 @@ export default function ServerSettings() {
                             <div className="setting-item">
                                 <label>Auto Backup</label>
                                 <button className="toggle-button">
-                                    {userServer.autoBackupEnabled ? <ToggleOnIcon /> : <ToggleOffIcon />}
+                                    {userServer.autoBackupEnabled ? <ToggleOnIcon fontSize='large' /> : <ToggleOffIcon fontSize='large' />}
                                 </button>
                             </div>
                             <div className="setting-item">
