@@ -68,6 +68,14 @@ nav {
                     }
                 }
 
+                &:nth-child(5) {
+                    color: #ffa4a4;
+
+                    &:hover {
+                        color: #ffffff;
+                    }
+                }
+
                 &:last-child {
                     display: flex;
                     align-items: center;
@@ -86,6 +94,71 @@ nav {
                     &:hover {
                         background-position: 100%;
                     }
+                }
+            }
+        }
+    }
+
+    // Hamburger menu for mobile
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+
+        .line {
+            width: 25px;
+            height: 3px;
+            background-color: #a4c4ff;
+            margin: 4px 0;
+            transition: 0.3s ease;
+        }
+    }
+
+    // Media queries for mobile responsiveness
+    @media (max-width: 768px) {
+        .left {
+            a {
+                font-size: 14px;
+            }
+        }
+
+        .right {
+            ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: #1a1a1a;
+                padding: 20px;
+                border-radius: 10px;
+                gap: 20px;
+
+                li {
+                    &:last-child {
+                        width: auto;
+                    }
+                }
+
+                &.active {
+                    display: flex;
+                    z-index: 9;
+                }
+            }
+        }
+
+        .hamburger {
+            display: flex;
+
+            &.active {
+                .line:nth-child(1) {
+                    transform: rotate(-45deg) translate(-5px, 6px);
+                }
+                .line:nth-child(2) {
+                    opacity: 0;
+                }
+                .line:nth-child(3) {
+                    transform: rotate(45deg) translate(-5px, -6px);
                 }
             }
         }

@@ -8,9 +8,20 @@ export const servers = [
         info: "Suitable for small scale servers!",
         users: 126,
         ram: 2,
-        isActive: false
+        isActive: false,
+        difficulty: "easy", // Peaceful, Easy, Normal, Hard
+        gameMode: "survival", // Survival, Creative, Adventure, Spectator
+        worldSeed: "123456789", // World seed for terrain generation
+        pvpEnabled: false, // Whether PvP is enabled
+        whitelistEnabled: false, // Whether the server has a whitelist
+        opPlayers: ["Player1"], // List of OP players
+        autoBackupEnabled: true, // Whether auto-backup is enabled
+        backupFrequency: "daily", // Daily, Weekly, Monthly
+        version: "1.20.1", // Minecraft server version
+        plugins: ["Essentials", "WorldEdit"], // Installed plugins
+        mods: [], // Installed mods
+        worldName: "PigWorld", // Name of the world
     },
-
     {
         id: 2,
         name: "Cat Server",
@@ -20,9 +31,20 @@ export const servers = [
         info: "An option where you can have fun with more friends!",
         users: 273,
         ram: 3,
-        isActive: true
+        isActive: true,
+        difficulty: "normal",
+        gameMode: "survival",
+        worldSeed: "987654321",
+        pvpEnabled: true,
+        whitelistEnabled: true,
+        opPlayers: ["Player1", "Player2"],
+        autoBackupEnabled: true,
+        backupFrequency: "weekly",
+        version: "1.20.1",
+        plugins: ["Essentials", "WorldGuard"],
+        mods: [],
+        worldName: "CatLand",
     },
-
     {
         id: 3,
         name: "Snowman Server",
@@ -32,9 +54,20 @@ export const servers = [
         info: "Suitable for a SMP server with your friends!",
         users: 88,
         ram: 4,
-        isActive: true
+        isActive: true,
+        difficulty: "hard",
+        gameMode: "survival",
+        worldSeed: "snowman123",
+        pvpEnabled: true,
+        whitelistEnabled: false,
+        opPlayers: ["Player1"],
+        autoBackupEnabled: false,
+        backupFrequency: "monthly",
+        version: "1.20.1",
+        plugins: ["Essentials", "Dynmap"],
+        mods: [],
+        worldName: "SnowyWorld",
     },
-
     {
         id: 4,
         name: "Villager Server",
@@ -44,9 +77,20 @@ export const servers = [
         info: "You can build an entire village here!",
         users: 63,
         ram: 5,
-        isActive: false
+        isActive: false,
+        difficulty: "normal",
+        gameMode: "creative",
+        worldSeed: "village123",
+        pvpEnabled: false,
+        whitelistEnabled: true,
+        opPlayers: ["Player1", "Player2", "Player3"],
+        autoBackupEnabled: true,
+        backupFrequency: "daily",
+        version: "1.20.1",
+        plugins: ["Essentials", "Towny"],
+        mods: [],
+        worldName: "VillageBuild",
     },
-
     {
         id: 5,
         name: "Wandering Server",
@@ -56,9 +100,20 @@ export const servers = [
         info: "How about conquering the Minecraft world with your army?",
         users: 27,
         ram: 6,
-        isActive: false
+        isActive: false,
+        difficulty: "hard",
+        gameMode: "survival",
+        worldSeed: "wander123",
+        pvpEnabled: true,
+        whitelistEnabled: false,
+        opPlayers: ["Player1"],
+        autoBackupEnabled: true,
+        backupFrequency: "weekly",
+        version: "1.20.1",
+        plugins: ["Essentials", "Factions"],
+        mods: [],
+        worldName: "WanderWorld",
     },
-
     {
         id: 6,
         name: "Herobrine Server",
@@ -68,9 +123,18 @@ export const servers = [
         info: "Most fearless one. Are you ready for it?",
         users: 12,
         ram: 8,
-        isActive: false
+        isActive: false,
+        difficulty: "hard",
+        gameMode: "survival",
+        worldSeed: "herobrine123",
+        pvpEnabled: true,
+        whitelistEnabled: true,
+        opPlayers: ["Player1", "Player2"],
+        autoBackupEnabled: true,
+        backupFrequency: "daily",
+        version: "1.20.1",
+        plugins: ["Essentials", "McMMO"],
+        mods: [],
+        worldName: "HerobrineRealm",
     },
-
-]
-
-//First commit try
+];

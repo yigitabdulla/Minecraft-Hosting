@@ -1,3 +1,5 @@
+@import '../../responsive.scss';
+
 .user-servers {
     color: white;
     display: flex;
@@ -28,6 +30,12 @@
             padding: 20px;
             width: 400px;
             height: 380px;
+            border-radius: 10px;
+
+            @include sm {
+                width: 350px;
+                height: 400px;
+            }
 
             .server-title {
                 display: flex;

@@ -7,6 +7,25 @@
     padding: 10px;
     gap: 10px;
 
+    .my-servers {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(144deg, #40ffe6, #5B42F3 50%, #00DDEB);
+        background-size: 200%;
+        background-position: 0%;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: background-position 0.3s ease;
+        width: 300px;
+        padding: 10px;
+        margin-bottom: 10px;
+
+        &:hover {
+            background-position: 100%;
+        }
+    }
+
     h3 {
         font-size: 32px;
     }

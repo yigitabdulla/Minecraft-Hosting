@@ -15,6 +15,9 @@ import Cart from './pages/cart/Cart';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import ServerSettings from './pages/serverSettings/ServerSettings';
+import ServerConsole from './pages/serverConsole/ServerConsole';
+import ServerPlayers from './pages/serverPlayers/ServerPlayers';
+import ServerFolders from './pages/serverFolders/ServerFolders';
 
 
 function App() {
@@ -55,6 +58,18 @@ function App() {
         {
           path: "/profile/servers/:serverId/settings",
           element: <ServerSettings/>
+        },
+        {
+          path: "/profile/servers/:serverId/console",
+          element: <ServerConsole/>
+        },
+        {
+          path: "/profile/servers/:serverId/players",
+          element: <ServerPlayers/>
+        },
+        {
+          path: "/profile/servers/:serverId/folders",
+          element: <ServerFolders/>
         },
         {
           path: "/profile/servers/:serverId",

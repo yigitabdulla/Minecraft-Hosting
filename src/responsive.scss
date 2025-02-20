@@ -1,17 +1,31 @@
+// responsive.scss
+$breakpoints: (
+    'sm': 576px,
+    'md': 768px,
+    'lg': 992px,
+    'xl': 1200px
+);
+
 @mixin sm {
-    @media (max-width: 738px) {
-      @content;
+    @media (max-width: map-get($breakpoints, 'sm')) {
+        @content;
     }
-  }
-  
-  @mixin md {
-    @media (max-width: 1024px) {
-      @content;
+}
+
+@mixin md {
+    @media (max-width: map-get($breakpoints, 'md')) {
+        @content;
     }
-  }
-  
-  @mixin lg {
-    @media (max-width: 1366px) {
-      @content;
+}
+
+@mixin lg {
+    @media (max-width: map-get($breakpoints, 'lg')) {
+        @content;
     }
-  }
+}
+
+@mixin xl {
+    @media (max-width: map-get($breakpoints, 'xl')) {
+        @content;
+    }
+}

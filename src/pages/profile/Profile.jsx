@@ -19,6 +19,8 @@ export default function Profile() {
 
             <h3>My Account</h3>
 
+            <a className='my-servers' href="/profile/servers">My Servers</a>
+
             <div className="account-settings">
                 <div className="username">
                     <label htmlFor="username">Username</label>

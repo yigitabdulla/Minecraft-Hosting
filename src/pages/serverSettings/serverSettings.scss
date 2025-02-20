@@ -2,37 +2,118 @@
 
 .server-settings {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 20px;
     margin-top: 35px;
 
-    .side-navbar-container {
-        flex: 1;
+    @include sm {
+        flex-direction: column;
+        gap: 10px;
     }
 
+    .side-navbar-container {
+        flex: 1;
+
+        @include sm {
+            width: 100%;
+        }
+    }
 
     .server-settings-main {
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        flex-direction: column;
-        color: white;
         flex: 8;
-        gap: 20px;
+        color: white;
         margin-right: 150px;
-        height: 70vh;
 
         @include lg {
             margin-right: 0;
         }
 
+        @include sm {
+            margin-right: 0;
+            width: 100%;
+            padding: 10px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+
+            @include sm {
+                font-size: 24px;
+            }
+        }
+
         .server-settings-container {
             display: flex;
-            align-items: center;
-            justify-content: start;
             flex-direction: column;
+            gap: 20px;
 
+            .server-setting {
+                background-color: rgba(128, 128, 128, 0.156);
+                border-radius: 10px;
+                padding: 20px;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+
+                .setting-header {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    margin-bottom: 20px;
+
+                    h3 {
+                        font-size: 24px;
+
+                        @include sm {
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                .setting-content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+
+                    .setting-item {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        label {
+                            font-size: 18px;
+
+                            @include sm {
+                                font-size: 16px;
+                            }
+                        }
+
+                        input, select {
+                            padding: 8px;
+                            border-radius: 5px;
+                            border: 1px solid white;
+                            background-color: transparent;
+                            color: white;
+                            width: 200px;
+
+                            @include sm {
+                                width: 150px;
+                            }
+                        }
+
+                        .toggle-button {
+                            background-color: transparent;
+                            border: none;
+                            color: white;
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
         }
     }
 }

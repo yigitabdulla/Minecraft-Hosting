@@ -22,15 +22,11 @@ export default function SideNavbar() {
         <button><PlayCircleOutlineIcon /></button>
       </div>
        <ul className=''>
-        <li><Link to={`/profile/servers/${serverId}`}><PlayCircleOutlineIcon/> Server</Link></li>
-        
-        <li><Link to={`/profile/servers/${serverId}/settings`}><SettingsIcon />Settings</Link></li>
-        <li><a href={`/profile/servers/${serverId}/settings`}><CodeIcon/>Console</a></li>
-        <li><a href={`/profile/servers/${serverId}/settings`}><PeopleIcon/>Players</a></li>
-        <li><a href={`/profile/servers/${serverId}/settings`}><FolderIcon/>Folders</a></li>
-        <li><a href={`/profile/servers/${serverId}/settings`}><ApiIcon/>Software</a></li>
-        <li><a href={`/profile/servers/${serverId}/settings`}><RestorePageIcon/>Logs</a></li>
-        <li><a href={`/profile/servers/${serverId}/settings`}><PublicIcon/>World</a></li>
+        <li><a href={`/profile/servers/${serverId}`}><PlayCircleOutlineIcon/> Server</a></li>
+        <li><a href={`/profile/servers/${serverId}/settings`}><SettingsIcon />Settings</a></li>
+        <li><a href={`/profile/servers/${serverId}/console`}><CodeIcon/>Console</a></li>
+        <li><a href={`/profile/servers/${serverId}/players`}><PeopleIcon/>Players</a></li>
+        <li><a href={`/profile/servers/${serverId}/folders`}><FolderIcon/>Folders</a></li>
        </ul>
     </div>
   )

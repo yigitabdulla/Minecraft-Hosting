@@ -1,27 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import './navbar.scss'
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import { useSelector } from 'react-redux';
 
 export default function Navbar() {
 
   const [totalQuantity, setTotalQuantity] = useState(0)
-
   const [auth, setAuth] = useState(true)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const handleAuth = () => {
-    setAuth(!auth)
-    setAnchorEl(null);
-  }
-
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const cart = useSelector(store => store.cart.items);
@@ -37,36 +25,30 @@ export default function Navbar() {
   return (
     <nav>
       <div className="left">
-        <img src='/navbar-icon.jpeg' />
+        <img src='/navbar-icon.jpeg' alt="navbar icon" />
         <a href="/">Lumino Hosting</a>
       </div>
 
       <div className="right">
-        <ul>
+        <ul className={isMobileMenuOpen ? 'active' : ''}>
           <li><a href="/">Home</a></li>
           <li><a href="/servers">Servers</a></li>
           <li><a href="/cart">Cart <p>{totalQuantity}</p></a></li>
           <li><a href="/contact">Contact Us</a></li>
+          {auth && <li><a>Logout</a></li>}
           {auth ? <li><a
-            onClick={handleClick}
+            href='/profile'
           >
             Profile
           </a>
-            <Menu
-              id="basic-menu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              MenuListProps={{
-                'aria-labelledby': 'basic-button',
-              }}
-              style={{marginTop:'10px'}}
-            >
-              <MenuItem onClick={handleClose}><a href="/profile">Profile</a></MenuItem>
-              <MenuItem onClick={handleClose}><a href="/profile/servers">My Servers</a></MenuItem>
-              <MenuItem>Logout</MenuItem>
-            </Menu></li> : <li><a href="/login">Login</a></li>}
+            </li> : <li><a href="/login">Login</a></li>}
         </ul>
+
+        <div className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`} onClick={toggleMobileMenu}>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
       </div>
     </nav>
   )
